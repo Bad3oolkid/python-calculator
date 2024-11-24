@@ -1,6 +1,6 @@
 class Calculator:
-    def add(self, a, b):
-        return a + b
+ def add(self, a, b):
+    return a + b 
 
     def subtract(self, a, b):
         return b - a
@@ -11,17 +11,15 @@ class Calculator:
             result = self.add(result, a)
         return result
 
-    def divide(self, a, b):
-        result = 0
-        while a > b:
-            a = self.subtract(a, b)
-            result += 1
-        return result
+   def divide(self, a, b):
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
+    return a // b
     
     def modulo(self, a, b):
-        while a <= b:
-            a = a-b
-        return a
+    if b == 0:
+        raise ZeroDivisionError("Cannot modulo by zero")
+    return a % b
 
 # Example usage:
 if __name__ == "__main__":
